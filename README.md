@@ -1,4 +1,5 @@
 # Puls-Events — Étude de design d'un MVP RAG cloud-native
+puls-events-mvp-architecture
 
 > Conception et planification de la transformation d'un POC de recherche sémantique en **MVP scalable**, prêt pour la production. Projet final du parcours **Data Engineer — Titre RNCP Niveau 7**.
 
@@ -90,6 +91,7 @@ Le rapport décrit l'architecture sous quatre angles complémentaires :
 - **Modularité** : réversibilité par abstraction (interfaces pour le LLM, la base vectorielle, la recherche web).
 - **Monitoring** : trois niveaux (infrastructure, application, qualité LLM), SLIs/SLOs définis, alerting, boucle d'amélioration continue.
 - **Sécurité** : défense en profondeur, IAM au moindre privilège, gestion des secrets, **conformité RGPD**, protection contre les abus, plan de réponse à incident.
+- **Recette & validation** : critères d'acceptation mesurables, jalons VABF (mise en service) et VSR (service régulier), gestion graduée des réserves, répartition MOA/MOE.
 
 ## Méthodologie et planification
 

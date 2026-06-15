@@ -2038,6 +2038,103 @@ Cinq scénarios d'incident sont documentés en runbook (F25) :
 
 
 
+### 4.5.5 Stratégie de recette et de validation
+
+Le déploiement, le monitoring et la sécurité garantissent que le 
+produit *fonctionne* ; la recette et la validation garantissent qu'il 
+est *accepté*. Cette stratégie définit comment, à chaque jalon, le 
+commanditaire (équipe produit Puls-Events, en posture de maîtrise 
+d'ouvrage) reconnaît formellement que le livrable est conforme et 
+exploitable avant de passer à l'étape suivante.
+
+#### Vérification et validation : deux questions distinctes
+
+La démarche repose sur la distinction classique de l'ingénierie 
+logicielle :
+
+- **Vérification** — *« a-t-on construit le produit correctement ? »* 
+  Le livrable est conforme à ses spécifications techniques (tests 
+  unitaires, tests d'intégration, revue de code, conformité au 
+  contrat d'interface).
+- **Validation** — *« a-t-on construit le bon produit ? »* Le livrable 
+  répond au besoin réel des utilisateurs et des personas définis en 
+  Section 1, dans leurs conditions d'usage.
+
+Un MVP peut être vérifié sans être validé : un chatbot peut respecter 
+sa spécification tout en produisant des recommandations que les 
+utilisateurs jugent peu pertinentes. La recette est le moment où ces 
+deux contrôles se rejoignent et s'officialisent.
+
+#### Les trois niveaux de recette
+
+| Niveau | Objet | Exemples concrets dans ce MVP |
+|---|---|---|
+| **Recette technique** | Le produit est déployable, stable, performant et sécurisé | Tests de charge Locust 100 utilisateurs (F20), respect des SLOs (latence, disponibilité), audit IAM et secrets, pipeline CI/CD vert |
+| **Recette fonctionnelle** | Chaque fonctionnalité fait ce qui était spécifié | Validation des Must-Have du backlog : mémoire conversationnelle, filtrage géographique, routing RAG/Web, affichage des sources |
+| **Recette utilisateur (métier)** | Les utilisateurs cibles confirment l'exploitabilité réelle | Évaluation étendue sur 50 questions annotées (F19), retours via le bouton feedback (F15), revue par l'équipe produit et marketing |
+
+#### Deux jalons de validation normés : VABF et VSR
+
+Pour un commanditaire public ou exigeant, la validation se découpe en 
+deux paliers contractuels, adaptés ici à l'horizon du MVP :
+
+- **VABF — Vérification d'Aptitude au Bon Fonctionnement** : prononcée 
+  au jalon **J5 (Production)**, sur l'environnement de pré-production. 
+  Elle atteste que le MVP est apte à être mis en service. C'est la 
+  recette « à chaud ».
+- **VSR — Vérification de Service Régulier** : prononcée au jalon 
+  **J6 (Bilan)**, après deux semaines d'exploitation réelle 
+  (sprint 6). Elle confirme la stabilité du service dans la durée, 
+  sur la base des observations Langfuse et CloudWatch. C'est la 
+  recette « à froid » qui clôt définitivement la garantie de 
+  conformité.
+
+#### Critères d'acceptation
+
+La recette n'est prononcée que si les critères mesurables suivants 
+sont atteints — ils transforment les SLOs et la qualité RAG en seuils 
+de décision binaires :
+
+| Dimension | Critère d'acceptation (seuil) | Source de mesure |
+|---|---|---|
+| Pertinence RAG | Score moyen ≥ 4/5 sur les 50 questions, 0 % de réponse vide | Jeu d'évaluation F19 |
+| Performance | Latence P95 conforme au SLO défini, sous 100 utilisateurs simultanés | Tests de charge Locust (F20) |
+| Disponibilité | Aucun incident bloquant non résolu pendant la VSR | Monitoring Langfuse + CloudWatch |
+| Conformité RGPD | Endpoint d'effacement fonctionnel, validation DPO obtenue | Recette sécurité (F21) |
+| Fonctionnel | 100 % des fonctionnalités Must-Have recettées sans réserve bloquante | Backlog MoSCoW |
+
+#### Gestion des réserves et procès-verbal
+
+À l'issue de chaque recette, un **procès-verbal (PV)** est signé. Il 
+peut être assorti de **réserves**, classées par criticité :
+
+- **Réserve bloquante** : empêche la mise en service ; correction 
+  obligatoire avant prononciation de la recette.
+- **Réserve majeure** : acceptée sous condition de correction dans un 
+  délai convenu (typiquement avant la VSR).
+- **Réserve mineure** : consignée, traitée dans la roadmap V1 sans 
+  bloquer la production.
+
+Cette graduation évite l'écueil du « tout ou rien » : le MVP peut 
+entrer en service avec des réserves mineures documentées, dans 
+l'esprit même d'un *Minimum Viable Product*.
+
+#### Répartition des responsabilités
+
+| Acteur | Rôle dans la recette |
+|---|---|
+| **Maîtrise d'ouvrage (MOA)** — équipe produit | Définit les critères d'acceptation, exécute la recette utilisateur, prononce et signe le PV |
+| **Maîtrise d'œuvre (MOE)** — Data Engineer | Prépare les environnements et jeux de tests, conduit les recettes technique et fonctionnelle, lève les réserves |
+| **DPO** | Valide la conformité RGPD comme préalable à la VABF |
+| **Tech Lead** | Arbitre la criticité des réserves en cas de désaccord |
+
+Cette formalisation ancre le MVP dans une démarche d'ingénierie 
+maîtrisée : la mise en production n'est pas un événement technique 
+isolé mais une **décision tracée, mesurée et partagée** entre les 
+parties prenantes.
+
+---
+
 ## Section 5 : Estimation des coûts BUILD et OPEX
 
 Cette section présente l'estimation financière du projet, structurée 
