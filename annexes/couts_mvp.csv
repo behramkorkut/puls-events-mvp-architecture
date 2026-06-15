@@ -1,0 +1,31 @@
+Categorie,Poste,Type,Unite,Quantite,PrixUnitaire_EUR,Cout_S1_EUR,Cout_S2_EUR,Cout_S3_EUR,Commentaire
+BUILD-Humain,Data Engineer,One-shot,Jours,60,600,36000,36000,36000,100 pct sur 12 semaines
+BUILD-Humain,Tech Lead,One-shot,Jours,12,800,9600,9600,9600,20 pct charge
+BUILD-Humain,Product Owner,One-shot,Jours,18,700,12600,12600,12600,30 pct charge
+BUILD-Humain,UX/UI Designer,One-shot,Jours,10,650,6500,6500,6500,50 pct sur 4 semaines
+BUILD-Humain,DevOps SRE,One-shot,Jours,6,750,4500,4500,4500,10 pct appui
+BUILD-Humain,Data Analyst,One-shot,Jours,5,600,3000,3000,3000,A partir de S8
+BUILD-Humain,DPO Juridique,One-shot,Jours,4,900,3600,3600,3600,Ponctuel
+BUILD-Humain,Marketing Growth,One-shot,Jours,5,600,3000,3000,3000,A partir de S10
+BUILD-Infra,Vectorisation initiale Mistral,One-shot,Lot,1,20,20,20,20,5000 events 1024-dim
+BUILD-Infra,Domaine puls-events.fr,One-shot,An,1,15,15,15,15,Reservation 1 an
+BUILD-Infra,Outils design,One-shot,Forfait,1,50,50,50,50,Genspark Figma 12 semaines
+OPEX-LLM,Mistral input tokens,Recurrent mensuel,M tokens,4.5,0.14,0.63,6.30,63,150 a 15000 req par jour
+OPEX-LLM,Mistral output tokens,Recurrent mensuel,M tokens,2.25,0.56,1.26,12.60,126,500 tokens par reponse
+OPEX-LLM,Mistral embeddings,Recurrent mensuel,M tokens,0.225,0.10,0.02,0.23,2.25,50 tokens par requete
+OPEX-AWS,ECS Fargate compute,Recurrent mensuel,Heures,720,Variable,18,36,145,Dim variable selon scenario
+OPEX-AWS,Application Load Balancer,Recurrent mensuel,Forfait,1,18,18,18,22,Cout fixe minimum
+OPEX-AWS,DynamoDB,Recurrent mensuel,M req,Variable,Variable,1,8,60,On-demand
+OPEX-AWS,S3 stockage,Recurrent mensuel,GB-mois,10,0.023,1,2,10,3 buckets raw processed logs
+OPEX-AWS,CloudWatch,Recurrent mensuel,GB logs,Variable,0.50,2,8,40,Retention 30 jours
+OPEX-AWS,Secrets Manager,Recurrent mensuel,Secrets,10,0.40,4,4,4,10 cles API
+OPEX-AWS,Route 53,Recurrent mensuel,Forfait,1,1,1,1,2,DNS public
+OPEX-AWS,Data transfer sortant,Recurrent mensuel,GB,Variable,0.09,2,10,80,Egress internet
+OPEX-Tiers,Qdrant Cloud,Recurrent mensuel,Cluster,Variable,Variable,0,0,25,Free tier jusqu a 30k events
+OPEX-Tiers,Brave Search API,Recurrent mensuel,K requetes,Variable,Variable,0,15,150,Free tier 2000 req
+OPEX-Tiers,Langfuse Cloud,Recurrent mensuel,Observations,Variable,Variable,0,0,50,Free tier 50k obs
+OPEX-Tiers,Snowflake,Recurrent mensuel,Credits,Variable,Variable,30,50,120,Pay per use XS warehouse
+TOTAL-BUILD,Total investissement initial,One-shot,,,,78885,78885,78885,99 pct humain
+TOTAL-OPEX,Total exploitation mensuelle,Recurrent mensuel,,,,79,172,898,Echelle de coute par utilisateur
+TOTAL-OPEX-ANNUEL,Total exploitation annuelle,Recurrent annuel,,,,948,2064,10776,12 mois
+COUT-PAR-USER,Cout marginal mensuel par utilisateur,Calcul,,,,0.16,0.03,0.02,Diminution par effet echelle

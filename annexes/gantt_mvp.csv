@@ -1,0 +1,18 @@
+Tache,Sprint,Debut_semaine,Fin_semaine,Jalon,Categorie
+Discovery utilisateurs,Sp1,1,2,J1,Discovery
+Validation personas v2,Sp1,2,2,J1,Discovery
+Provisionnement AWS Terraform,Sp2,3,3,J2,Infrastructure
+Deploiement Qdrant Cloud,Sp2,3,4,J2,Infrastructure
+Pipeline ingestion OpenAgenda,Sp2,3,4,J2,Infrastructure
+Memoire conversationnelle,Sp3,5,6,J3,Fonctionnel
+Contexte geographique,Sp3,5,6,J3,Fonctionnel
+Recherche web Tavily,Sp3,5,6,J3,Fonctionnel
+Integration Langfuse,Sp4,7,7,J4,Observabilite
+Dashboards Snowflake,Sp4,7,8,J4,Observabilite
+Evaluation etendue 50 questions,Sp4,8,8,J4,Observabilite
+Hardening securite RGPD,Sp5,9,9,J5,Production
+CI/CD GitHub Actions,Sp5,9,10,J5,Production
+Deploiement production,Sp5,10,10,J5,Production
+Monitoring usage reel,Sp6,11,11,J6,Bilan
+Rapport bilan MVP,Sp6,11,12,J6,Bilan
+Roadmap V1,Sp6,12,12,J6,Bilan

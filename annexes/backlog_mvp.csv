@@ -1,0 +1,37 @@
+ID,Epic,Fonctionnalite,MoSCoW,StoryPoints,SprintCible,RisquePrincipal,Mitigation
+F01,Donnees,Pipeline ingestion OpenAgenda vers S3 raw,Must,3,Sp2,Quotas API source et format donnees changeant,Retry avec backoff et validation schema
+F02,Donnees,Preprocessing et chunking documents,Must,3,Sp2,Qualite chunking impacte pertinence RAG,Reprise strategie POC validee 5180 chunks
+F03,Donnees,Vectorisation Mistral Embed vers Qdrant Cloud,Must,5,Sp2,Cout embeddings et rate limit Mistral,Batch processing et cache embeddings
+F04,Donnees,Enrichissement geocodage API BAN,Must,3,Sp2,Adresses manquantes ou ambigues 15 pct,Fallback geocodage par ville
+F05,Infra,IaC Terraform AWS complet,Must,8,Sp2,Complexite Terraform et droits IAM,Modules reutilisables et revue Tech Lead
+F06,Infra,Pipeline CI/CD GitHub Actions,Must,5,Sp2-Sp5,Premier deploiement complexe,Pipeline incrementale et tests staging
+F07,RAG,Recherche semantique base LangGraph Qdrant,Must,3,Sp3,Reprise POC rag-events-2026,Code deja valide
+F08,RAG,Self-correction loop grade et rewrite,Must,3,Sp3,Reprise POC rag-events-2026,Code deja valide
+F09,RAG,Filtrage geographique rayon km,Must,5,Sp3,Precision geocodage en amont,Validation jointe avec F04
+F10,RAG,Memoire conversationnelle DynamoDB,Must,8,Sp3,Coherence sessions et RGPD,TTL automatique et validation DPO
+F11,Agent,Tool Tavily Search,Must,5,Sp3,Cout API et latence,Quota par utilisateur et timeout strict
+F12,Agent,Routing intelligent RAG vs Web,Must,5,Sp3,Faux positifs et faux negatifs,Evaluation continue sur jeu test
+F13,UX,Interface chat Streamlit,Must,5,Sp3-Sp4,Choix techno et dependance designer,Streamlit en MVP Next.js en V1
+F14,UX,Affichage sources et distance,Must,2,Sp4,Faible,N/A
+F15,UX,Bouton feedback utilisateur,Must,2,Sp4,Faible,N/A
+F16,Observabilite,Integration Langfuse,Must,5,Sp4,Configuration auto-instrumentation,Doc officielle LangGraph
+F17,Observabilite,Pipeline logs vers Snowflake,Must,5,Sp4,Volumetrie et cout Snowflake,Politique retention 90 jours
+F18,Observabilite,Dashboard metier Snowflake 5 KPIs,Must,5,Sp4,Qualite donnees amont,Tests d integrite quotidiens
+F19,Qualite,Jeu evaluation etendu 50 questions,Must,3,Sp4,Subjectivite annotation,Double annotation et grille rubrique
+F20,Qualite,Tests de charge Locust 100 users,Must,3,Sp4-Sp5,Cout LLM tests,Plafond cout et environnement isole
+F21,Securite,Conformite RGPD,Must,5,Sp5,Validation DPO requise,DPO implique des J1
+F22,Securite,IAM least privilege rotation secrets,Must,3,Sp5,Sur-restriction bloquante,Audit role par role
+F23,Securite,Rate limiting et protection abus LLM,Must,3,Sp5,Calibrage seuils,Seuils ajustes apres tests charge
+F24,Production,Deploiement public domaine SSL,Must,3,Sp5,Propagation DNS,Reservation domaine en S6
+F25,Production,Runbooks incident 5 scenarios,Must,2,Sp5,Doc a maintenir,Revue mensuelle planifiee
+F26,UX,Authentification Cognito,Should,5,Sp5,Complexite parcours,Peut basculer post-MVP
+F27,RAG,Multilingue FR EN,Should,2,Sp4,Reprise POC,Code deja valide
+F28,UX,Streaming reponses LLM,Should,3,Sp4,Compatibilite Streamlit,Fallback synchrone
+F29,Observabilite,Alerting CloudWatch,Should,3,Sp5,Calibrage seuils,Calibrage apres 2 semaines prod
+F30,RAG,Reranking cross-encoder,Could,5,Sp5-Sp6,Latence ajoutee,Activation conditionnelle
+F31,UX,Suggestions de relance proactives,Could,3,Sp6,Qualite difficile a mesurer,A/B test post-MVP
+F32,UX,Export resultats par email,Could,3,Sp6,Service SES a configurer,Configuration simple SES
+F33,HorsMVP,Notifications push evenements,Wont,,,,Roadmap V1
+F34,HorsMVP,Reservation directe billetterie,Wont,,,,Roadmap V1 partenariats
+F35,HorsMVP,Application mobile native,Wont,,,,Roadmap V2
+F36,HorsMVP,Recommandations proactives par profil,Wont,,,,Roadmap V1 clustering
