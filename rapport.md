@@ -2465,7 +2465,7 @@ GitHub correspondant.
 
 | Repository | Description | Lien |
 |---|---|---|
-| `puls-events-mvp-design` | Design d'architecture et gestion de projet (présent rapport) | [github.com/behramkorkut/puls-events-mvp-design](https://github.com/behramkorkut/puls-events-mvp-design) |
+| `puls-events-mvp-design` | Design d'architecture et gestion de projet (présent rapport) | [github.com/behramkorkut/puls-events-mvp-design](https://github.com/behramkorkut/puls-events-mvp-architecture) |
 | `rag-events-2026` | Chatbot RAG production-ready France entière (socle technique du MVP) | [github.com/behramkorkut/rag-events-2026](https://github.com/behramkorkut/rag-events-2026) |
 | `puls-events-rag` | POC initial Île-de-France (point de départ de la mission) | [github.com/behramkorkut/puls-events-rag](https://github.com/behramkorkut/puls-events-rag) |
 | Profil GitHub complet | Vue d'ensemble des projets data engineering | [github.com/behramkorkut](https://github.com/behramkorkut) |
@@ -2518,7 +2518,7 @@ permet :
 - la **transparence** sur le processus de réflexion vs. le résultat 
   final.
 
-🔗 [Voir le journal de bord](https://github.com/behramkorkut/puls-events-mvp-design/blob/main/JOURNALDEBORD.md)
+
 
 ## A6. Sources et références bibliographiques
 
