@@ -233,7 +233,7 @@ Ce projet illustre les compétences attendues d'un **architecte data et solution
 
 ## Auteur
 
-**Behram Korkut** — Ingénieur Data & Architecture
+**Behram Korkut** — Ingénieur Data Full Stack & Data Architecture
 GitHub : [github.com/behramkorkut](https://github.com/behramkorkut)
 
 > Projet réalisé dans le cadre de la certification **Data Engineer — Titre RNCP Niveau 7** 
